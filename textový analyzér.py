@@ -77,32 +77,28 @@ for slovo in vsechno:
 
 print (f"There are {len(slova)} in the selected text")
 
-# statistika - začínající velkým pismenem
 capital = []
+velka = []
+mala = []
+cisla = []
+
 for slovo in slova:
+    # statistika - začínající velkým pismenem
     if slovo.istitle():
         capital.append(slovo)
-print (f"There are {len(capital)} titlecase words.")
-
-# statistika - velká slova
-velka = []
-for slovo in slova:
+    # statistika - velká slova
     if slovo.isupper():
         velka.append(slovo)
-print (f"There are {len(velka)} uppercase words.")
-
-# statistika - malá slova
-mala = []
-for slovo in slova:
+    # statistika - malá slova
     if slovo.islower():
         mala.append(slovo)
-print (f"There are {len(mala)} lowercase words.")
-
-# statistika - čísla
-cisla = []
-for slovo in slova:
+    # statistika - čísla
     if slovo.isnumeric():
         cisla.append(slovo)
+        
+print (f"There are {len(capital)} titlecase words.")
+print (f"There are {len(velka)} uppercase words.")
+print (f"There are {len(mala)} lowercase words.")
 print(f"There are {len(cisla)} numeric strings.")
 
 # statistika - součet

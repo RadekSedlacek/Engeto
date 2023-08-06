@@ -81,6 +81,7 @@ capital = []
 velka = []
 mala = []
 cisla = []
+delka_slov = {}
 
 for slovo in slova:
     # statistika - začínající velkým pismenem
@@ -95,6 +96,12 @@ for slovo in slova:
     # statistika - čísla
     if slovo.isnumeric():
         cisla.append(slovo)
+    # rozdělit slova podle délky do slovníku
+    delka = len(slovo)
+    if delka in delka_slov:
+        delka_slov[delka] +=1
+    else:
+        delka_slov[delka] = 1
         
 print (f"There are {len(capital)} titlecase words.")
 print (f"There are {len(velka)} uppercase words.")
@@ -114,16 +121,6 @@ print (f"The sum of all the numbers {soucet}")
 # halvička výskytů
 print (oddeleni)
 print (f"LEN|{'OCCURRENCES':^17}|NR.")
-
-# rozdělit slova podle délky do slovníku
-
-delka_slov = {}
-for slovo in slova:
-    delka = len(slovo)
-    if delka in delka_slov:
-        delka_slov[delka] +=1
-    else:
-        delka_slov[delka] = 1
 
 # vypsat statistiku
 for klíč, hodnota in sorted(delka_slov.items()):
